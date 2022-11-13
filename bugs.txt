@@ -1,0 +1,11 @@
+
+[*] I don't know why we are doing something like this where we batch, then draw, then batch, ...
+	We would just batch then draw the batched items with EndDraw()/EndDrawIndexed, which is efficent as it takes up a single draw call. 
+	So: Batch. Batch. Batch. Batch. So, research IG.
+	
+
+[/] Fix annoying bug that doesn't allow for the drawing of new primitives after GFX_EndDrawIndexed() was invoked.
+	- You can't really zero out it because then that would cause error with the generic testing example.
+	- Renderdoc does show that it works fine, so plausably something to do with the drawing aspect of it? (research)
+	
+	
